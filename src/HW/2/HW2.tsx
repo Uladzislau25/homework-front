@@ -14,7 +14,7 @@ export type UserType = {
 };
 
 export type UsersObjectType = {
-  myFriends: UserType; // пропиши типизацию
+  myFriends: UserType[]; // пропиши типизацию
 };
 
 
@@ -47,8 +47,8 @@ export const HW2 = () => {
 
   let [currentUsers, setCurrentUsers] = useState<UsersObjectType>(users);
 
-  const filterUsers = (city: string) => {
-    const filteredUsers = users.myFriends.filter(users=> users.address.city === city);
+  const filterUsers = () => {
+    const filteredUsers = users.myFriends.filter(users=> users.address.city === 'Los Angeles');
     setCurrentUsers({ myFriends: filteredUsers });
   };
 
